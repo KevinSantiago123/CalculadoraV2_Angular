@@ -1,26 +1,12 @@
 import { Component } from '@angular/core';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
-//@Component({
-//  selector: 'app-root',
-//  templateUrl: './app.component.html',
-//  styleUrls: ['./app.component.css']
-//})
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  styles: [`
-    agm-map {
-      height: 300px;
-    }
-  `],
-  template: `
-  <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
-  `
+  styleUrls: ['./app.component.css']
 })
+
 
 export class AppComponent {
 
@@ -123,17 +109,28 @@ export class AppComponent {
   }
   }
 
+  
   paises:any =[
-    {activo:true,nombre:'Colombia'},
-    {activo:true,nombre:'Brazil'},
-    {activo:false,nombre:'Argentina'},
-    {activo:true,nombre:'Polonia'},
-    {activo:true,nombre:'Alemania'},
-    {activo:false,nombre:'Francia'},
-    {activo:true,nombre:'EU'},
-  ]
+    {cercano:1,activo:true,nombre:'Colombia'},
+    {cercano:1,activo:true,nombre:'Brazil'},
+    {cercano:2,activo:false,nombre:'Argentina'},
+    {cercano:3,activo:true,nombre:'Polonia'},
+    {cercano:3,activo:true,nombre:'Alemania'},
+    {cercano:3,activo:false,nombre:'Francia'},
+    {cercano:2,activo:true,nombre:'EU'},
+    ]
   
 
-
-
+  /*
+ paises:any =[
+  {cercano:1,nombre:'Colombia'},
+  {cercano:1,nombre:'Brazil'},
+  {cercano:2,nombre:'Argentina'},
+  {cercano:3,nombre:'Polonia'},
+  {cercano:3,nombre:'Alemania'},
+  {cercano:3,nombre:'Francia'},
+  {cercano:2,nombre:'EU'},
+  ]
+*/
+  
 }

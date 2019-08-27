@@ -1,3 +1,7 @@
 agm-map {
-    height: 300px;
+    height: 600px;
   }
+
+.numero_par {
+  background: #ECC93C;
+}
