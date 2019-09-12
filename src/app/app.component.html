@@ -16,7 +16,7 @@
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   <hr>
   <h1>Calculadora basica</h1>
-  <input align="right"style="text-align:right;width:100px;height:15px;margin:8px" type="number" placeholder="número1" name="pantalla2" width="40" [(ngModel)]="dato"> 
+  <input align="right"style="text-align:right;width:100px;height:15px;margin:8px" type="number" placeholder="número1" name="pantalla2" width="40" [(ngModel)]="dato">
   <input align="right"style="text-align:right;width:100px;height:15px;margin:8px" type="number" placeholder="número2" name="pantalla" [(ngModel)]="dato2">
   <br>
   <button style="width:220px;height:22px" name="ce" (click)="limpiar()">CE</button>
@@ -24,7 +24,7 @@
   <button style="margin:5px;width:40px;height:22px" name="+" (click)="sumar()">+</button>
   <button style="width:40px;height:22px" name="-" (click)="restar()">-</button>
   <button style="margin:5px;width:40px;height:22px" name="x" (click)="multiplicar()">x</button>
-  <button style="width:40px;height:22px" name="/" (click)="dividir()">/</button> 
+  <button style="width:40px;height:22px" name="/" (click)="dividir()">/</button>
   <button style="margin:5px;width:40px;height:22px" name="mod" (click)="modulo()">Mod</button>
   <br>
   <br>
@@ -32,14 +32,14 @@
   <hr>
 </div>
 <ul>
-    <ng-container *ngFor="let pais of paises; let i = index" [ngSwitch]="pais.cercano">  
+    <ng-container *ngFor="let pais of paises; let i = index" [ngSwitch]="pais.cercano">
       <!--li *ngIf="pais.activo" >{{pais.nombre}}</li-->
-        <li [ngStyle]="{color: (pais.activo)? 'black': 'gray'}" 
+        <li [ngStyle]="{color: (pais.activo)? 'black': 'gray'}"
         [ngClass]="{numero_par: (i+1) % 2 != 0}" >{{pais.nombre}} -
         <span *ngSwitchCase=1>Cerca</span>
         <span *ngSwitchCase=2>Lejos</span>
         <span *ngSwitchCase=3>Muy Lejos</span>
-        </li>     
+        </li>
     </ng-container>
   </ul>
 <h2>Here are some links to help you start: </h2>
@@ -64,3 +64,8 @@
 </agm-map>
 
 <router-outlet></router-outlet>
+
+
+<div *ngFor="let pais in pais">
+  {{ pais.nombre }}
+</div>
