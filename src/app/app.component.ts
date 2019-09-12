@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+import { PaisesService } from './paises.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 
 export class AppComponent {
-
+  pais: any;
   lat: number = 4.667967;
   lng: number =  -74.103692;
 
@@ -22,7 +23,7 @@ export class AppComponent {
   dato2:number;
   resultado:number;
 
-  constructor(){
+  constructor(private servicioPaises: PaisesService){
     setTimeout(() => {
       this.deshabilitado=false;
     },3000)
@@ -35,6 +36,11 @@ export class AppComponent {
     this.dato2=null
     this.resultado=null;
   }
+
+  obtenerPaises() {
+    this.pais = this.servicioPaises.getAllPaises();
+  }
+
   sumar(){
     if (this.dato ==null || this.dato2 ==null){
       alert("Ingrese los valores de forma correcta por favor.")
@@ -45,7 +51,7 @@ export class AppComponent {
     else{
       this.resultado=this.dato+this.dato2;
     }
-    
+
   }
   restar(){
     if (this.dato ==null || this.dato2 ==null){
@@ -82,12 +88,12 @@ export class AppComponent {
       alert("Intente nuevamente.")
       this.dato=null
       this.dato2=null;
-    } 
+    }
     else{
       this.resultado=this.dato/this.dato2;
     }
   }
-    
+
   }
   modulo(){
     if (this.dato ==null || this.dato2 ==null){
@@ -102,14 +108,14 @@ export class AppComponent {
       alert("Intente nuevamente.")
       this.dato=null
       this.dato2=null;
-    } 
+    }
     else{
       this.resultado=this.dato%this.dato2;
     }
   }
   }
 
-  
+
   paises:any =[
     {cercano:1,activo:true,nombre:'Colombia'},
     {cercano:1,activo:true,nombre:'Brazil'},
@@ -119,7 +125,7 @@ export class AppComponent {
     {cercano:3,activo:false,nombre:'Francia'},
     {cercano:2,activo:true,nombre:'EU'},
     ]
-  
+
 
   /*
  paises:any =[
@@ -132,5 +138,5 @@ export class AppComponent {
   {cercano:2,nombre:'EU'},
   ]
 */
-  
+
 }
